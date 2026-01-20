@@ -1,0 +1,27 @@
+---
+description: 'Category: CATEGORY (DIFFICULTY)'
+---
+
+# Keeper
+
+## Description
+
+```
+Add your challenge description here
+```
+
+Add additional information about your challenge here
+
+## Walkthrough
+
+### Question 1 - Add your question here
+
+Add your answer for this question here
+
+### Question 2 - Add your question here
+
+Add your answer for this question here
+
+## Creator's Notes
+
+Add creator's notes here

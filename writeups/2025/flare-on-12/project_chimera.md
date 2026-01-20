@@ -20,7 +20,7 @@ Category: Reverse Engineering
 
 Extracting the zip file, we are provided with a Python script
 
-<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 The Python file contains a large binary string, as well as some code to decompress and execute it.
 
@@ -132,11 +132,11 @@ except Exception as e:
 	print(f"An exception has occured: {e}")
 ```
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 The 2nd and 3rd constants look very suspicious, so we take note of them. We also notice that that the os.getlogin function is also used, which returns the username of the current user. To make our lives easier, we can give the entire disassembled output to an LLM, and have it analyze and derive the source code. (Link to the conversation [here](https://claude.ai/chat/660b4573-bcb4-40a7-bc74-a63919f3bf46))
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 Based on the derived code, it appears that the program will XOR the current user's name with the value "42", before comparing it with the first binary string. If the two strings match, the flag will be decrypted using the current user's name and printed out.&#x20;
 
@@ -193,7 +193,7 @@ if __name__ == "__main__":
         print("[!] Make sure the 'arc4' library is installed: pip install arc4")
 ```
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

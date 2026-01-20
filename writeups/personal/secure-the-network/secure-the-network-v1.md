@@ -1,5 +1,5 @@
 ---
-description: 'Creator: Ryo Soikutsu'
+description: 'Category: Forensics'
 ---
 
 # Secure The Network v1
@@ -20,19 +20,19 @@ Category: Forensics
 
 There are a couple of ways to look for the following value, but this walkthrough will showcase using the Apache2's `access.log` log file
 
-<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (212).png" alt=""><figcaption></figcaption></figure>
 
 We can see that the IP address 201.172.32.43 shows up very often, indicating that they may be performing directory enumeration on the web server. We can dump out all the IP addresses present in the log files using the following command
 
-<figure><img src="../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (213).png" alt=""><figcaption></figcaption></figure>
 
 Now we see that 201.172.32.17 has much higher occurrences, maybe that's the attacker's IP address? Now we can use the network capture file provided to figure out which IP address is the correct one
 
-<figure><img src="../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
 
 Filtering packets from 201.172.32.17, we can see that most of the traffic generated is HTTP traffic, which suggests that this machine is the attacker's enumeration machine. Could be the correct answer, so let's take note of that
 
-<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
 
 Filtering for packets from 201.172.32.43, we can see that this machine performs some SSH connections to a private server, as well as some signs of directory traversal in the HTTP traffic. This is the attacker's machine, as it performs the directory traversal attack to expose the SSH key on the server, and then uses it for initial access
 
@@ -44,7 +44,7 @@ For readers who are curious as to what 201.172.32.17 is, it was intended to be a
 
 To protect the target, NAT (network address translation) has been configured on the firewall. Since the firewall used is PFSense, we can access the NAT information in the provided config backup at `export-syslog.zip/config-pfsense.ybn.org.xml`
 
-<figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (225).png" alt=""><figcaption></figcaption></figure>
 
 ### Question 3 - What tool did the attacker use to scan the target? Answer in all lower-case
 
@@ -54,7 +54,7 @@ Answer can be found in Q1, in `access.log` under the request header field
 
 There are several possible answers to this question. Searching up the indicators of compromise on Google (or ChatGPT), we get&#x20;
 
-<figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (216).png" alt=""><figcaption></figcaption></figure>
 
 We can try each of the answers to find the accepted answer
 
@@ -62,13 +62,13 @@ We can try each of the answers to find the accepted answer
 
 The enumeration that the question refers to is the start of the attacker enumerating the target server. We can check the `access.log` file to find the timestamp of the first enumeration attempt
 
-<figure><img src="../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
 
 ### Question 6 - What is the first directory enumeration tool that the attacker uses? Answer in all lower-case
 
 Common directory enumeration tools are Gobuster, Dirbuster, Ffuf and Feroxbuster. Knowing this, we can search for these tool names in `access.log`, or alternatively look through the logs manually until we find one of the listed tools in the request header
 
-<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (218).png" alt=""><figcaption></figcaption></figure>
 
 ### Question 7 - The attacker attempted to access the web server through SSH. What is the timestamp for the successful access? Answer in UTC (Format is YYYY-MM-DD HH:MM:SS)
 
@@ -76,7 +76,7 @@ All logon attempts, be it SSH or console/GUI, to a Unix system is stored in the 
 
 We can search for all occurrences of SSH login attempts, then filter it by the attacker's IP address, and then by the success status
 
-<figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (219).png" alt=""><figcaption></figcaption></figure>
 
 ### Question 8 - The attacker attempted to erase any traces of their attack by deleting system logs. Which files were modified by the attacker Answer in filename 1\_filename 2
 
@@ -86,19 +86,19 @@ This is a trickier challenge. Usually, attackers will attempt to erase any authe
 
 Searching through these 3 log files, we can see these notable chunks of timeskip
 
-<figure><img src="../../.gitbook/assets/image (180).png" alt=""><figcaption><p>apache2/error.log</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (220).png" alt=""><figcaption><p>apache2/error.log</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption><p>auth.log</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (221).png" alt=""><figcaption><p>auth.log</p></figcaption></figure>
 
 ### Question 9 - Upon further analysis of our firewall logs, it seems like one of the sysadmins had left in a rule which allowed for the attacker to access the remote server through&#xD; SSH. Identify this overly-permissive rule. Answer is the rule's tracker ID
 
 This question is asking for a PFSense firewall rule ID. The exported firewall configuration can be found in the `export-syslog.zip` file, named `config-pfsense.ybn.org.xml`
 
-<figure><img src="../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
 Since the question specifically asks us to look for a rule allowing SSH access, we can search for that specific term
 
-<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
 
 Once we know what entry our target rule is, we can scroll up until we find the tracker ID
 

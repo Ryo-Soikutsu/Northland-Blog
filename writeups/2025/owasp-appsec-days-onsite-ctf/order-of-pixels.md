@@ -18,27 +18,27 @@ Category: Steganography (Easy)
 
 Extracting the 7zip file, we are provided with a folder filled with images. Looking through some of the files extracted, it seems like all of them are blank.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (114).png" alt=""><figcaption></figcaption></figure>
 
 Checking the extracted file with the ls command, it seems like there's 4 image files which are suspiciously large
 
-<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
 
 Hmm, looks suspicious. We can confirm our suspicions using the [StegExpose](https://github.com/b3dk7/StegExpose) tool.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
 
 We can copy these 4 files out to a separate folder, and attempt further analysis on them. We can throw the 4 files into Aperi'Solve to see if anything comes up
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption><p>Suspiciously flag-shaped picture</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption><p>Suspiciously flag-shaped picture</p></figcaption></figure>
 
 Looks very suspicious, lets throw the other 3 files in
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
 
 We can reconstruct the flag using the different fragments in the image.&#x20;
 

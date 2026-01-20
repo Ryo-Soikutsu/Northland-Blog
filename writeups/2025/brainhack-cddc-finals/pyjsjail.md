@@ -241,7 +241,7 @@ Later when I realized about the polyglot hint, I modified the code to the follow
 
 The Javascript section was harder, since I have not written Javascript before. As such, I enlisted the help of our lord and savior, ChatGPT
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 It took an hour or two of additional prompting, personal research and banging my head against the table before finding a suitable JS payload
 
@@ -253,9 +253,9 @@ Unfortunately, the version of Node.js used by my machine and the version used by
 
 _sighhhh_ More ChatGPT time!
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption><p>Threw in the full error message because Im lazy :P</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption><p>Threw in the full error message because Im lazy :P</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
 Fortunately, the second exploit given was just enough to run on the challenge. After some modification to the output code, we are left with the following
 
@@ -312,7 +312,7 @@ if __name__ == "__main__":
 
 Finally, we can attempt to query the remote server to get the flag
 
-<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption><p>Solved with 10 minutes to spare</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (146).png" alt=""><figcaption><p>Solved with 10 minutes to spare</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/WhatsApp Image 2025-06-11 at 17.19.58_d8309629.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -333,7 +333,7 @@ Now, onto the polyglot code. This code cleverly manipulates syntax so that it ap
 
 This duality leads to an interesting visualization when viewed through JavaScript vs Python syntax highlighters, where each highlights different parts of the code based on their own parsing logic.
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption><p>Comparison in two different linters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption><p>Comparison in two different linters</p></figcaption></figure>
 
 ### Added Notes
 

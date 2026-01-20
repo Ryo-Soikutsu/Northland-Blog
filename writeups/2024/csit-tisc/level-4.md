@@ -25,13 +25,13 @@ This challenge was a really easy challenge compared to the previous levels. I wo
 
 Visiting the URL given, we are presented with the AlligatorPay webpage
 
-<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (148).png" alt=""><figcaption></figcaption></figure>
 
 Being a web challenge, I searched the usual robots.txt, sitemap.xml and /admin endpoint, but got nothing from it. From there, I used Inspect Element to take a look at the client-side source code for the webpage, and managed to get a couple of hints to solve this challenge.
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption><p>Looks like we have a test card to play with, and a target balance to hit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption><p>Looks like we have a test card to play with, and a target balance to hit</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption><p>Part of the source code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (150).png" alt=""><figcaption><p>Part of the source code</p></figcaption></figure>
 
 I copied the JS script out to VS Code, and cleaned it up to only include the important bit (which thankfully made up more than half of the code). If we took a look at the code, it seemed like the website takes in a digital card file, checks for a certain start and end string, and then decodes the file to get the account data
 
@@ -190,7 +190,7 @@ if __name__ == "__main__":
 
 The following script reads the binary data of the AGPay card file, and extracts the encryption key and data before performing decryption on it to retrieve the original data. Running the previous script, we can see that we get the following data:
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 The data that is extracted matches the data that we saw earlier from the website. In order to solve this challenge, we need to have a balance of $313371337 in our card. To do that, we can write a script to perform the reverse and generate a payload card with the respective balance amount
 
@@ -278,7 +278,7 @@ if __name__ == "__main__":
 
 A relatively simple script, it takes in a set of user inputs for the card number, expiry date and account balance, then outputs a new card with those values. It uses the Python `struct` library to work with raw binary data, since for some reason Python cannot write binary data directly to files by itself. With this generated file, we upload the payload card to the website and try to get the flag.
 
-<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
 
 Unfortunately, our card returns an error message, too vague to get much information out of (thanks JavaScript). After a few minutes of trial and error, I figured out that the file was missing some padding that could have caused the webapp to error out. In particular, I was supposed to implement PCKS7 padding to the binary data, in order for the indexes of the data to fit properly (I'm probably tripping, but thats the best reasoning my half-asleep brain could come up with). Asking ChatGPT to modify the original script to include the new padding, I was returned the following:
 
@@ -384,4 +384,4 @@ The new script just adds a pad\_data function that takes in the plaintext data, 
 
 This time, when we upload our payload card, we get our flag
 
-<figure><img src="../../.gitbook/assets/image (113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>

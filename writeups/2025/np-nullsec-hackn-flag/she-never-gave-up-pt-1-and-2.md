@@ -40,7 +40,7 @@ We are only provided with a single image file from part 1
 
 Based on the challenge name and description, it is suggested that we have to find information about the pink-haired girl in the image. For the uninitiated, this is Haru Urara, an anime character from the multi-media series "Umamusume: Pretty Derby", and also based off a racehorse of a similar name
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption><p>The real-life Haru Urara</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption><p>The real-life Haru Urara</p></figcaption></figure>
 
 <details>
 
@@ -60,19 +60,19 @@ On September 8, 2025, Haru became unwell and a veterinarian was called in. Overn
 
 The challenge description asks for the location of Haru's retirement home. A quick Google search provides us with the relevant information
 
-<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 The second challenge asks us for the amount of (rye)grass that was donated to Haru. This is referring to a site created by an Umamusume fan, which allows fans to purchase gifts of fresh ryegrass to racehorses. The site was promoted on Twitter (now called "X"), which led to fans donating hundreds of kilograms of ryegrass and causing the site to crash at one point. The Twitter post can be found [here](https://x.com/tarutaru_mage/status/1943259707277480273?lang=en)
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 Navigating to the site, we are greeted with the following
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
 We can translate the website to English using the browser's built-in translation utility (or we can just guess which value on the site it is, lol)
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
 
 At the time of this blog post, a total of 3,540kg of ryegrass has been donated to Haru Urara.
 

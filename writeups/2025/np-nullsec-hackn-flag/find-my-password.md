@@ -18,15 +18,15 @@ Category: Reverse Engineering (Easy)
 
 We are provided with an ELF file, although there isnt much information from the file command
 
-<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
 
 Running the strings utility on the executable, we can see that the program was packed using UPX
 
-<figure><img src="../../.gitbook/assets/image (229).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (269).png" alt=""><figcaption></figcaption></figure>
 
 Simple enough, we can unpack the executable using the built-in upx tool in Kali
 
-<figure><img src="../../.gitbook/assets/image (230).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (270).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can open the executable in Ghidra to decompile it and recover the password. After decompiling the program, Ghidra provides us with the following pseudo-C code
 
@@ -115,7 +115,7 @@ void xor_buf(long param_1,ulong param_2,byte param_3)
 
 Analyzing the code, we can see that local\_158 and the 3 variables below it appear to contain the hexadecimal value of the XOR'd password, and local\_11 contains the XOR key (local\_10 is the length of the XOR'd password). For some reason, I am not able to get the string to be XOR'd back properly, so we pass the script into ChatGPT to help us deobfuscate and calculate the un-XOR'd password
 
-<figure><img src="../../.gitbook/assets/image (231).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (271).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

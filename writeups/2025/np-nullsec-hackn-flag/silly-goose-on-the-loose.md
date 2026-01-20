@@ -18,13 +18,13 @@ Category: Reverse Engineering (Easy)
 
 We are provided with a single-page PDF file, containing a goose wearing a funny hat and shoes
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
 Checking various PDF metadata, we don't see anything unusual with the file, except for the presence of JavaScript.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption><p>Command: qpdf --json sillygooseontheloose.pdf</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption><p>Command: qpdf --json sillygooseontheloose.pdf</p></figcaption></figure>
 
 This is the JavaScript after cleaning it up&#x20;
 
@@ -155,8 +155,8 @@ const _0xcafe = {
 
 This code takes a string of characters and reassembles it into the flag by getting the mapped hexadecimal value of each character, then converting it to a character and appending it to the output string. For example, the character "a" will be mapped to 0x48, which will be mapped to the value "H"
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 We can directly copy-paste the chunk of code into DevTools' Console, and then print out the output of the function
 
-<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>

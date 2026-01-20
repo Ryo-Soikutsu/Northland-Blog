@@ -22,23 +22,23 @@ Category: OSINT
 
 Downloading the provided file, we are provided with a HEIC (High-Efficiency Image Format) file, which is the default image format for Apple devices. When we open the image, we see the following
 
-<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption><p>Very beautiful view out of a pavilion</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>Very beautiful view out of a pavilion</p></figcaption></figure>
 
 Investigating the image further, we can see that it contains some metadata of the device that it was taken on, as well as location information when the image was taken
 
-<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption><p>Viewed on Windows with the Properties tab</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (132).png" alt=""><figcaption><p>Viewed on Windows with the Properties tab</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption><p>Viewed on Linux using the exiftool command</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (123).png" alt=""><figcaption><p>Viewed on Linux using the exiftool command</p></figcaption></figure>
 
 With this information, we can convert the latitude and longitude from DMS format to decimal degrees, and search it in Google Maps
 
-<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption><p><a href="https://www.fcc.gov/media/radio/dms-decimal">https://www.fcc.gov/media/radio/dms-decimal</a></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (124).png" alt=""><figcaption><p><a href="https://www.fcc.gov/media/radio/dms-decimal">https://www.fcc.gov/media/radio/dms-decimal</a></p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
 There are two shops close to the provided coordinate. We can try both of them to see which is the correct answer. We find that the craft shop is the correct answer
 
-<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
 
 ## Creator's Notes
 
@@ -46,13 +46,13 @@ This was one of the first challenges that I had made, part of the Travelling Int
 
 One of the common pitfalls encountered by participants is that they pass the image directly into Google Lens, in an attempt to find the location. Unfortunately, Google Lens will return the incorrect location, as shown below
 
-<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
 
 The matches found varies every time you search. However, the closest result returned so far is Otowa Saryo (found in YBN CTF 1.0), which is right next to the craft shop
 
-<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
 
 Other participants have also resorted to the Geoguesser approach, looking for the location manually using various landmarks such as the houses and background scenery shown in the image. However, they are generally far off from the correct location, about 50-100m away (the red circle area indicates the general location guessed by participants)
 
-<figure><img src="../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
 

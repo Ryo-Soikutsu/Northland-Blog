@@ -1,5 +1,5 @@
 ---
-description: 'Creator: Ryo Soikutsu'
+description: 'Category: Forensics'
 ---
 
 # Secure The Network v1.5
@@ -18,9 +18,9 @@ Category: Forensics
 
 Opening up the pcap file provided, we can see that a Python script was transferred to a machine over HTTP
 
-<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (188).png" alt=""><figcaption><p>Following the HTTP stream shows us the script being transferred</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (228).png" alt=""><figcaption><p>Following the HTTP stream shows us the script being transferred</p></figcaption></figure>
 
 ```python
 import socket
@@ -187,7 +187,7 @@ if __name__ == "__main__":
 
 Reading through the script, we can infer that it is attempting to use DNS packets to exfiltrate data out of the network.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption><p>DNS traffic confirms suspicions of data exfiltration</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (229).png" alt=""><figcaption><p>DNS traffic confirms suspicions of data exfiltration</p></figcaption></figure>
 
 Using the exfiltration script, we can reverse engineer it to figure out how to extract and decrypt the traffic
 
@@ -277,7 +277,7 @@ if __name__ == "__main__":
 
 With this script, we can dump out the encrypted traffic and display it on the terminal
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption><p>Running the solve script</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (147).png" alt=""><figcaption><p>Running the solve script</p></figcaption></figure>
 
 ## Final Notes
 

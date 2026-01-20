@@ -20,11 +20,11 @@ Category: Reverse Engineering
 
 Extracting the zip file, we are provided with a couple of files
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 This is a PyGame program, which requires the player to get a certain number of bears while avoiding boulders, which will end the game.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption><p>Weirdly fun, also a gamble</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (86).png" alt=""><figcaption><p>Weirdly fun, also a gamble</p></figcaption></figure>
 
 The Python script provided basically does the same thing, but provides us with the source code of the program.
 
@@ -414,7 +414,7 @@ for k in range(256):
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

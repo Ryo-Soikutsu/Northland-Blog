@@ -16,7 +16,7 @@ Category: Reverse Engineering (Easy)
 
 We are provided with a Linux executable, which we can disassemble in Ghidra to view a pseudo-C approximation of its assembly code.
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 ```c
 undefined8 main(void)
@@ -56,7 +56,7 @@ undefined8 main(void)
 
 The program will read the flag variable, and XOR each character with a hex value 0x69, before updating the current progress bar. We can easily reverse this encryption by extracting the flag variable, and then XOR'ing each character by ourselves
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 
 ```py
 ciphertext = ['0b', '05', '08', '01', '08', '03', '12', '1e', '5a', '05', '0a', '59',
@@ -70,4 +70,4 @@ plaintext = ''.join(chr(b^key) for b in cipher_bytes)
 print(plaintext)
 ```
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>

@@ -18,7 +18,7 @@ Category: Web (Hard)
 
 Looking at the webpage, it seems like there's only one endpoint, /debug. However, when we navigate to it, we get an Access Denied response
 
-<figure><img src="../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
 
 Looking at the source code, we can see that the endpoint performs authentication based on the request headers, and checks if the value for X-Forwarded-For is set to 127.0.0.1 (localhost)
 
@@ -52,13 +52,13 @@ def debug():
 
 By setting the header in our curl request, we can now see that we are authenticated
 
-<figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
 
 The code has an XSS and SSTI vulnerability, as it directly renders user input without any validation. While the value argument is being sanitized against a blacklist, the key argument isn't, so injection can be performed on that
 
 Using a standard test payload for SSTI injection ( \{{7\*7\}} ), we can see that it is indeed vulnerable to SSTI injection
 
-<figure><img src="../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
 Now we just copy a payload from another writeup :P&#x20;
 
@@ -68,4 +68,4 @@ Payload:&#x20;
 {{request.application.__globals__.__builtins__.open('flag.txt').read()}}
 ```
 
-<figure><img src="../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>

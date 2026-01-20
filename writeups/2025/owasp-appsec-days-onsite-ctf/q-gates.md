@@ -14,7 +14,7 @@ Category: Cryptography (Hard)
 
 This challenge focuses on quantum cryptography, and provides a simple example using simple quantum gates. After extracting the provided 7zip file, we are given a .pkl (Python Pickle) file and a PDF document.
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 As expected, the Pickle file contained binary data, which I was able to extract using a Python script and dump to a CSV
 
@@ -172,25 +172,25 @@ if __name__ == "__main__":
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 The PDF contained some details about basic quantum gates, as well as the encryption method used.
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
 
 It took me way, way longer than I'd like to admit to figure out how to complete this challenge, due to its difficulty. I originally attempted to look up quantum calculators online, before trying to get ChatGPT to generate a Python script to decode the data.
 
 After reading the PDF document closer, I noticed the following about the Hadamard Gate
 
-<figure><img src="../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
 In the matrix representation, I noticed that there was no 0 value, only +/- 1. Coincidentally, the CSV file provided also only contained +/- values of the same number. With this idea in mind, I opened CyberChef and cooked up the following recipe
 
-<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
 
 Using Find/Replace recipes to clean the CSV data and convert it into a single column of binary values. Stripping the newline characters and decoding from binary was the last step needed for me to get the flag
 
-<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

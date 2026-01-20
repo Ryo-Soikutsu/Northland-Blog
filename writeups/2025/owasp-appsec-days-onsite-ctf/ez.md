@@ -20,11 +20,11 @@ Category: Cryptography (Easy)&#x20;
 
 Unzipping the 7zip file given, we discover a flag.enc file, supposedly containing an encrypted form of the flag. Running the file command on the encrypted file indicates that it is a Gzip-compressed file.
 
-<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
 
 Using CyberChef, we can unzip the file and decode it to get the flag
 
-<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

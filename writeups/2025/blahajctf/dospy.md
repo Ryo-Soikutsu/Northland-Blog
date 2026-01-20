@@ -16,7 +16,7 @@ Category: Reverse Engineering (Easy)
 
 We are provided with a 7z archive file, which contains a single executable <mark style="color:red;">DecompileMe.exe</mark>. As the challenge description states, this is a .NET/C# executable, which means that Ghidra may not be very effective in decompiling this program. Instead, we can use a tool called [ILSpy](https://github.com/icsharpcode/ILSpy), a .NET decompiler that we can run on Windows. After installing the decompiler, we can open up the executable in the program to see its inner workings.
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption><p>After importing DecompileMe.exe</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption><p>After importing DecompileMe.exe</p></figcaption></figure>
 
 Looking through the source code, we notice several interesting things in the code. Firstly, the code contains an encrypted flag, which the program will supposedly decrypt. Next, there is a function labelled  DecryptAndShowFlag(), which will use the encrypted flag string we saw earlier.
 
@@ -116,4 +116,4 @@ print(decoded)
 
 (It's not very pretty, but its functional and thats all that matters)
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>

@@ -89,4 +89,4 @@ else:
 
 The second stage will check if the user has provided the correct password. If the user does provide the correct password, the program will decrypt a hexadecimal string using an RC4-like stream cipher algorithm. Fortunately, we don't need to reverse the script completely, as we can just pass in the password to have the program automatically decrypt it for us.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption><p>Think someone watched the Chainsaw Man movie</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption><p>Think someone watched the Chainsaw Man movie</p></figcaption></figure>

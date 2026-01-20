@@ -18,7 +18,7 @@ Category: Forensics (Easy)
 
 Nothing much to be said, opening the network capture immediately gives us the flag in plain text
 
-<figure><img src="../../.gitbook/assets/image (227).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (267).png" alt=""><figcaption></figcaption></figure>
 
 ## Conclusion
 

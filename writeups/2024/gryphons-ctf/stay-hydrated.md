@@ -97,5 +97,5 @@ with urllib.request.urlopen(request) as response:
 
 Use the commented out section of code to identify where in the filesystem you are, then edit the directory variable to move out to the root directory of the webserver
 
-<figure><img src="../../.gitbook/assets/image (160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
 
