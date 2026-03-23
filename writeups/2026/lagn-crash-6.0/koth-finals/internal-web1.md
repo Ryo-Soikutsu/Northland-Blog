@@ -4,8 +4,15 @@
 
 (Unfortunately there isn't a description for this machine, so you can get the overall background story instead!)
 
+{% code overflow="wrap" %}
 ```
+You were part of a big tech company known as E-Corp. Following the 18 March 2026 incident, all of E-Corp's infrastructure has been taken over by an unknown threat actor, causing E-Corp to fracture along departmental lines. 
+
+Your team makes up one of these departments, and your objective is to take back control over as much of E-Corp's former infrastructure by any means necessary, for anything less would mean that your department would not have the resources it so desperately needs to function. Among E-Corp's infrastructure comprises 10 machines - some running Windows, some Linux, some in a network and some running standalone. 
+
+Everything you do is no longer for E-Corp. It is for yourself. For your fellow departmental members. Even it means fighting, sabotaging, attacking the resources held by the other departments. Your department depends on you.
 ```
+{% endcode %}
 
 ## Walkthrough
 
