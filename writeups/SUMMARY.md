@@ -56,6 +56,18 @@
   * [Traveling Intern 3](2025/ybnctf/traveling-intern-3.md)
   * [Traveling Intern 4](2025/ybnctf/traveling-intern-4.md)
 
+## 2026
+
+* [Lag'n'Crash 6.0](2026/lagn-crash-6.0/README.md)
+  * [Secure The Network](2026/lagn-crash-6.0/secure-the-network.md)
+  * [Keeper](2026/lagn-crash-6.0/keeper.md)
+  * [Ping2Win](2026/lagn-crash-6.0/ping2win.md)
+  * [El Eff Aye](2026/lagn-crash-6.0/el-eff-aye.md)
+  * [Flag Transfer Protocol](2026/lagn-crash-6.0/flag-transfer-protocol.md)
+  * [Heartbleed](2026/lagn-crash-6.0/heartbleed.md)
+  * [KOTH Finals](2026/lagn-crash-6.0/koth-finals/README.md)
+    * [INTERNAL-WEB1](2026/lagn-crash-6.0/koth-finals/internal-web1.md)
+
 ## Personal
 
 * [Secure The Network](personal/secure-the-network/README.md)
@@ -63,6 +75,7 @@
   * [Secure The Network v1](personal/secure-the-network/secure-the-network-v1.md)
   * [Secure The Network v1.5](personal/secure-the-network/secure-the-network-v1.5.md)
   * [Secure The Network v2](personal/secure-the-network/secure-the-network-v2.md)
+  * [Secure The Network v3](personal/secure-the-network/secure-the-network-v3.md)
 * [Travelling Intern](personal/travelling-intern/README.md)
   * [.TEMPLATE](personal/travelling-intern/.template.md)
   * [2023](personal/travelling-intern/2023/README.md)
