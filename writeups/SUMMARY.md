@@ -75,7 +75,7 @@
   * [Secure The Network v1](personal/secure-the-network/secure-the-network-v1.md)
   * [Secure The Network v1.5](personal/secure-the-network/secure-the-network-v1.5.md)
   * [Secure The Network v2](personal/secure-the-network/secure-the-network-v2.md)
-  * [Secure The Network v3](personal/secure-the-network/secure-the-network-v3.md)
+  * [Secure The Network v2.e1](personal/secure-the-network/secure-the-network-v2.e1.md)
 * [Travelling Intern](personal/travelling-intern/README.md)
   * [.TEMPLATE](personal/travelling-intern/.template.md)
   * [2023](personal/travelling-intern/2023/README.md)

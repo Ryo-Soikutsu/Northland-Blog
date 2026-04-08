@@ -2,7 +2,7 @@
 description: 'Category: Forensics (Hard)'
 ---
 
-# Secure The Network v3
+# Secure The Network v2.e1
 
 ## Description
 
@@ -244,4 +244,10 @@ Now, we can finish submitting our answers and get the flag
 
 ## Creator's Notes
 
-Add creator's notes here
+As of time of writing, Secure The Network v2.e1 is the most complex challenge I've written so far, using new techniques for investigations that I've never used before. As such, the challenge was labelled as an experimental challenge, and participants were encouraged to open tickets for help. This was also originally meant to be part 2 of Secure The Network v2, but due to troubleshooting issues and time was later broken up into independent challenges.
+
+Based on feedback provided by participants, Secure The Network was a very fun and unique challenge due to the use of an SIEM, which is not commonly seen in CTFs. However, due to the unique use of SIEMs, many participants also encountered issues with trying to search for logs, which may have been a contributing factor to the low number of solves for this challenge.
+
+The original question bank was intended to have more questions, including discovering the user used for a DCSync attack which allowed the attacker to gain access to the DC. However, due to misconfigurations with the audit policies, many events were not captured by the SIEM, and led to several holes in the final reconstructed attack chain. Nevertheless, I will deem this proof of concept a success, as it seemed to be successful in counteracting AI tools like Codex and Antigravity, which are used commonly to auto-solve challenges.
+
+The Wazuh snapshot and the trivia server's code and configuration files can be found [here](https://github.com/Ryo-Soikutsu/Secure-The-Network/tree/main/STN-v2.e1).
