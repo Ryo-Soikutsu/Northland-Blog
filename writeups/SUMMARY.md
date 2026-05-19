@@ -67,6 +67,9 @@
   * [Heartbleed](2026/lagn-crash-6.0/heartbleed.md)
   * [KOTH Finals](2026/lagn-crash-6.0/koth-finals/README.md)
     * [INTERNAL-WEB1](2026/lagn-crash-6.0/koth-finals/internal-web1.md)
+* [Brainhack CDDC Qualifiers](2026/brainhack-cddc-qualifiers/README.md)
+  * [Find The Key](2026/brainhack-cddc-qualifiers/find-the-key.md)
+  * [Catch The Criminal](2026/brainhack-cddc-qualifiers/catch-the-criminal.md)
 
 ## Personal
 
