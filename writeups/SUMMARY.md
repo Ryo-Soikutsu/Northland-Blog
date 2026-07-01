@@ -70,6 +70,11 @@
 * [Brainhack CDDC Qualifiers](2026/brainhack-cddc-qualifiers/README.md)
   * [Find The Key](2026/brainhack-cddc-qualifiers/find-the-key.md)
   * [Catch The Criminal](2026/brainhack-cddc-qualifiers/catch-the-criminal.md)
+* [Sieberrsec CTF](2026/sieberrsec-ctf/README.md)
+  * [Sussy1](2026/sieberrsec-ctf/sussy1.md)
+  * [Crashed](2026/sieberrsec-ctf/crashed.md)
+  * [Hard Copy](2026/sieberrsec-ctf/hard-copy.md)
+  * [バカ通信 (Stupid Communication)](2026/sieberrsec-ctf/baka-stupid-communication.md)
 
 ## Personal
 
