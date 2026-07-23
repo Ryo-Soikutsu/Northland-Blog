@@ -75,6 +75,13 @@
   * [Crashed](2026/sieberrsec-ctf/crashed.md)
   * [Hard Copy](2026/sieberrsec-ctf/hard-copy.md)
   * [バカ通信 (Stupid Communication)](2026/sieberrsec-ctf/baka-stupid-communication.md)
+* [CISS 2026](2026/ciss-2026/README.md)
+  * [BACnet](2026/ciss-2026/bacnet.md)
+  * [Sailing Under a Stolen Flag](2026/ciss-2026/sailing-under-a-stolen-flag.md)
+  * [Don't Mess with the Historian](2026/ciss-2026/dont-mess-with-the-historian.md)
+  * [Device Beyond Expectations](2026/ciss-2026/device-beyond-expectations.md)
+  * [The Odd AtoN Out](2026/ciss-2026/the-odd-aton-out.md)
+  * [The Cursed Timestamp](2026/ciss-2026/the-cursed-timestamp.md)
 
 ## Personal
 
