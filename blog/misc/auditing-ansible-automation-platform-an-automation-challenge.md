@@ -134,7 +134,7 @@ While each audit step in isolation was simple enough to perform by hand, it star
 
 <figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
-AnsibleScout automates the discovery, enumeration and results evaluation steps described earlier. It can discover API endpoints advertised by the platform deployment, perform authenticated and unauthenticated enumeration and produce a self-contained findings report.&#x20;
+[AnsibleScout](https://github.com/Ryo-Soikutsu/AnsibleScout) automates the discovery, enumeration and results evaluation steps described earlier. It can discover API endpoints advertised by the platform deployment, perform authenticated and unauthenticated enumeration and produce a self-contained findings report.&#x20;
 
 The generated report highlights the following information:
 
