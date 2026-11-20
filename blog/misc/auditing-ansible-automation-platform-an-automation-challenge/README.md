@@ -20,7 +20,7 @@ This post will walk through what we've learnt from this project. We'll start wit
 
 [Ansible](https://docs.ansible.com/) is an automation engine that uses human-readable YAML _playbooks_ to describe the desired state of systems and the steps to reach it. On its own, Ansible is a command-line tool. [Ansible Automation Platform](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.7) is the enterprise layer built around it, adding a web interface, API, access control, scheduling, credential management, auditing, and content distribution so that automation can be shared safely across teams.
 
-<figure><img src="../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
 
 AAP is the supported, commercial product from Red Hat. Its upstream open-source counterparts include [AWX](https://github.com/ansible/awx) (the basis for the automation controller) and the Ansible community project itself. If you’ve seen “Ansible Tower” mentioned in older documentation, that was the earlier name for what is now the automation controller. AAP is made up of the following core components, which are accessible via the web UI or RESTful APIs.&#x20;
 
@@ -104,31 +104,31 @@ For this research project, we aimed to find out how much information an AAP depl
 
 We started by proxying traffic through Burp Suite and exploring the platform on our own to get an understanding of what we were working with. We quickly learnt that there were several endpoints that describe the platform's own API - either by returning the complete API structure in JSON format, or even providing a Swagger interface for us to interact with the API. We then sought to figure out what APIs were available to unauthenticated users, or if credentials were required in order to interact with the application.&#x20;
 
-<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 To help with this test, we wrote a simple Python script to check for unauthenticated endpoints. Since endpoint listings were unauthenticated and machine-readable, we were able to pull entire lists of endpoints and then iterate through each one to retrieve its data. For each endpoint, we recorded whether it required authentication or were available anonymously. Most endpoints required some form of authentication, but a few could be accessed without logging in. Notably, some of these unauthenticated endpoints two kinds of useful information:
 
 * **Version data**. Some unauthenticated endpoints revealed system and package versions. Combined with Red Hat's Security Data API, these identified the AAP release and mapped it to known CVEs. In our lab environment, we matched over 400 CVEs, only a fraction of which had publicly available fixes
 
-<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 * **Configuration data**. Other endpoints revealed system settings. This information included security configurations, authentication architecture and feature flags, which an attacker could use to plan targeted attacks on identity and trust paths.
 
-<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
 Authenticated endpoints were not spared either. Using valid administrator credentials, we reviewed what the API returned for stored objects. We paid special attention to job output and centralized logs, as the manual enumeration phase previously revealed that credentials could be exposed in the logs if the playbook was not properly secured. We were able to pull complete logs for historical and active jobs from the API, which could contain unredacted plaintext credentials if the proper settings were not set in the playbook (such as using `no_log`).
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption><p>An example of printed credentials being displayed in stdout</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption><p>An example of printed credentials being displayed in stdout</p></figcaption></figure>
 
 ## Automating our Audit
 
 While each audit step in isolation was simple enough to perform by hand, it started to become very slow and tedious to check each API manually for misconfigurations. As the tests dragged on, fatigue and human oversight started making results inconsistent. To that end, AnsibleScout was developed as a solution to this issue.&#x20;
 
-<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 [AnsibleScout](https://github.com/Ryo-Soikutsu/AnsibleScout) automates the discovery, enumeration and results evaluation steps described earlier. It can discover API endpoints advertised by the platform deployment, perform authenticated and unauthenticated enumeration and produce a self-contained findings report.&#x20;
 
@@ -140,7 +140,7 @@ The generated report highlights the following information:
 * Potential credential- or session-like values detected in job outputs
 * Matched security rules, such as weak password policies or missing security configurations
 
-<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 AnsibleScout was inspired by NCC Group's [ScoutSuite](https://github.com/nccgroup/scoutsuite) tool and was developed with AI assistance using Qwen4-Max. Given our time constraints, this workflow let us turn a slow, manual audit process into working code quickly. We then performed manual validation of the tool's behavior against our test environment, and confirmed that the returned findings matched responses that we obtained from manual testing.&#x20;
 

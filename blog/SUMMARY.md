@@ -29,4 +29,5 @@
 ## Misc
 
 * [CTF trivia server (w/ socat)](misc/ctf-trivia-server-w-socat.md)
-* [Auditing Ansible Automation Platform: An Automation Challenge](misc/auditing-ansible-automation-platform-an-automation-challenge.md)
+* [Auditing Ansible Automation Platform: An Automation Challenge](misc/auditing-ansible-automation-platform-an-automation-challenge/README.md)
+  * [Installing Ansible Automation Platform in a lab environment](misc/auditing-ansible-automation-platform-an-automation-challenge/installing-ansible-automation-platform-in-a-lab-environment.md)

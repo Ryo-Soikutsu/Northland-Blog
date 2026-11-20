@@ -265,13 +265,13 @@ sudo mv SecLists /usr/share/wordlists
 
 Similarly, our firewall will have minimal configurations. We'll simply be configuring it to allow traffic to pass between our three networks. We will not configure any firewall rules to block or drop traffic from certain ports or programs.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We'll configure an NAT network that our attacker can connect to from WAN. Moving on to the firewall rules
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
