@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Auditing Ansible Automation Platform: An Automation Challenge
 
 ## Introduction
