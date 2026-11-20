@@ -20,12 +20,6 @@
   * [Setting Up the Challenge Network](behind-the-scenes/secure-the-network-v2/setting-up-the-challenge-network.md)
   * [Fixing issues with the network](behind-the-scenes/secure-the-network-v2/fixing-issues-with-the-network.md)
 
-## Homelabs
-
-* [Introduction](homelabs/introduction.md)
-* [Linux](homelabs/linux.md)
-* [Windows/AD](homelabs/windows-ad.md)
-
 ## Misc
 
 * [CTF trivia server (w/ socat)](misc/ctf-trivia-server-w-socat.md)
